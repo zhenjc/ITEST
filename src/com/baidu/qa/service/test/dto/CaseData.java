@@ -25,6 +25,7 @@ public class CaseData {
 	private String desc = "";
 	private String action = "";
 	private String status="START";
+	private String verifyType = "StringMatch";
 	private VariableGenerator varGen=null;
 	private boolean hasVar=false;
 	private File inputFile=null;

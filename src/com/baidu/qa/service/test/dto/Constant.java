@@ -36,6 +36,7 @@ public class Constant {
 	public static final String FILENAME_DIFFFILE = "difffile";
 
 	public static final String FILE_TYPE_RESPONSE = "response";
+	public static final String FILE_TYPE_KEYWORDS = "keywords";
 	public static final String FILE_TYPE_SQL = "sql";
 	public static final String FILE_TYPE_DB = "csv";
 	public static final String FILE_TYPE_JSON = "json";

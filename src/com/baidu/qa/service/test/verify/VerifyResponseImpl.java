@@ -70,6 +70,27 @@ public class VerifyResponseImpl implements VerifyResponse {
 	}
 
 
+	public void verifyResponseWithKeyWords(File expectfile,String actual) {
+
+		FileCharsetDetector det = new FileCharsetDetector();
+
+		try{
+			String oldcharset = det.guestFileEncoding(expectfile);
+			if(oldcharset.equalsIgnoreCase("UTF-8") == false)
+				FileUtil.transferFile(expectfile, oldcharset, "UTF-8");
+		}catch(Exception ex){
+			log.error("[change expect file charset error]:"+ex);
+		}
+
+
+		List<String> datalist = FileUtil.getListFromFileWithBOMFilter(expectfile);
+		for(String data:datalist){
+			log.info("[expected key word]:"+data);
+			Assert.assertTrue("[response different with expect][expect]:"+data.trim()+"[actual]:"+actual, actual.contains(data.trim()));
+		}
+	}
+
+
 	public void verifyTestResultByHttpRequest(File file, Config config,
 			VariableGenerator vargen) {
 		try{

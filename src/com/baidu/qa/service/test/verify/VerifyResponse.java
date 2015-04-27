@@ -30,6 +30,12 @@ public interface VerifyResponse {
 	 */
 	public void verifyResponseWithExpectString(File file,String response);
 
+	/**
+	 * 验证接口返回String，是否包含特定字符
+	 * @return
+	 */
+	public void verifyResponseWithKeyWords(File file, String response);
+
 	
 	/**
 	 * 复用被测程序的http接口去查询得出实际的数据，并验证是否与预期一致

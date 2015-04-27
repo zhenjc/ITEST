@@ -162,7 +162,7 @@ public class ServiceInterfaceCaseTest {
 				}
 			}
 			
-			//case执行的次�?
+			//case执行的次数
 			if (cfInfo.containsKey("invocations")) {
 				String tmp = cfInfo.getProperty("invocations").trim();
 				if (tmp != null && tmp.length() != 0) {

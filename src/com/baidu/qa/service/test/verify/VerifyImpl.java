@@ -67,7 +67,13 @@ public class VerifyImpl implements Verify {
 					hasresponse = true;
 					VerifyResponse verify = new VerifyResponseImpl();
 					verify.verifyResponseWithExpectString(file, response);
-				} 
+				}
+				//expect文件的命名为xxx.keywords，则对接口的返回做检查
+				else if (FileUtil.getFileSuffix(file).equals(Constant.FILE_TYPE_KEYWORDS)) {
+					hasresponse = true;
+					VerifyResponse verify = new VerifyResponseImpl();
+					verify.verifyResponseWithKeyWords(file, response);
+				}
 				//expect文件的命名为xxx.csv，则转化为sql与mysql数据库中验证是否存在这样的数据
 				else if (FileUtil.getFileSuffix(file).equals(Constant.FILE_TYPE_DB)) {
 					VerifyMysqlData verify = new VerifyMysqlDataImpl();
