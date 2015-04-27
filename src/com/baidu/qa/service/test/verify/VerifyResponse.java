@@ -40,7 +40,6 @@ public interface VerifyResponse {
 	/**
 	 * 复用被测程序的http接口去查询得出实际的数据，并验证是否与预期一致
 	 * @param file
-	 * @param response
 	 */
 	public void verifyTestResultByHttpRequest(File file, Config config,VariableGenerator vargen);
 	
@@ -48,7 +47,6 @@ public interface VerifyResponse {
 	/**
 	 * 复用被测程序的soap接口去查询得出实际的数据，并验证是否与预期一致
 	 * @param file
-	 * @param response
 	 */
 	public void verifyTestResultBySoapRequest(File file, Config config,VariableGenerator vargen);
 }
